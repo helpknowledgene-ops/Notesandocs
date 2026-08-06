@@ -1,0 +1,150 @@
+
+----Addition----
+
+
+ASSUME CS:CODE, DS:DATA
+
+
+DATA SEGMENT
+    num1 EQU 15H
+    num2 EQU 25H
+    sum  DB ?
+DATA ENDS
+
+CODE SEGMENT
+BEGIN:
+    MOV AX, DATA
+    MOV DS, AX
+
+    MOV AL, num1
+    MOV BL, num2
+
+    ADD AL, BL
+
+    MOV sum, AL
+
+    MOV AH, 4CH
+    INT 21H
+
+CODE ENDS
+END BEGIN
+
+
+-----Multiplication-----
+
+ASSUME CS:CODE, DS:DATA
+
+DATA SEGMENT
+    num1 EQU 05H
+    num2 EQU 06H
+    result DW ?
+DATA ENDS
+
+CODE SEGMENT
+BEGIN:
+    MOV AX, DATA
+    MOV DS, AX
+
+    MOV AL, num1
+    MOV BL, num2
+
+    MUL BL          ; AX = AL × BL
+
+    MOV result, AX  ; Store 16-bit result
+
+    MOV AH, 4CH
+    INT 21H
+
+CODE ENDS
+END BEGIN
+
+
+------ Division ------
+
+ASSUME CS:CODE, DS:DATA
+
+DATA SEGMENT
+    num1 EQU 24H
+    num2 EQU 06H
+    quotient DB ?
+    remainder DB ?
+DATA ENDS
+
+CODE SEGMENT
+BEGIN:
+    MOV AX, DATA
+    MOV DS, AX
+
+    MOV AL, num1
+    MOV AH, 00H
+    MOV BL, num2
+
+    DIV BL
+
+    MOV quotient, AL
+    MOV remainder, AH
+
+    MOV AH, 4CH
+    INT 21H
+
+CODE ENDS
+END BEGIN
+
+------ ALL Arithmetic OPS --------
+
+ASSUME CS:CODE, DS:DATA
+
+DATA SEGMENT
+    num1 DB 15H
+    num2 DB 05H
+
+    sum  DB ?
+    diff DB ?
+    prod DB ?
+    quo  DB ?
+    rem  DB ?
+DATA ENDS
+
+CODE SEGMENT
+START:
+    MOV AX, DATA
+    MOV DS, AX
+
+    ;--------------------
+    ; Addition
+    ;--------------------
+    MOV AL, num1
+    ADD AL, num2
+    MOV sum, AL
+
+    ;--------------------
+    ; Subtraction
+    ;--------------------
+    MOV AL, num1
+    SUB AL, num2
+    MOV diff, AL
+
+    ;--------------------
+    ; Multiplication
+    ;--------------------
+    MOV AL, num1
+    MOV BL, num2
+    MUL BL
+    MOV prod, AL
+
+    ;--------------------
+    ; Division
+    ;--------------------
+    MOV AX, 0000H
+    MOV AL, num1
+    MOV BL, num2
+    DIV BL
+
+    MOV quo, AL
+    MOV rem, AH
+
+    MOV AH, 4CH
+    INT 21H
+
+CODE ENDS
+END START

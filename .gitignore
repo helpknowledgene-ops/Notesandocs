@@ -1,0 +1,76 @@
+# =========================
+# Android Studio / IntelliJ
+# =========================
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Android Studio local settings
+.idea/workspace.xml
+.idea/usage.statistics.xml
+.idea/dictionaries/
+.idea/shelf/
+
+# =========================
+# Gradle
+# =========================
+
+.gradle/
+build/
+**/build/
+
+# Gradle local configuration
+local.properties
+
+# =========================
+# Android
+# =========================
+
+# APKs
+*.apk
+*.aab
+
+# Generated Android files
+.externalNativeBuild/
+.cxx/
+
+# =========================
+# Kotlin
+# =========================
+
+*.class
+
+# =========================
+# Logs
+# =========================
+
+*.log
+
+# =========================
+# OS files
+# =========================
+
+.DS_Store
+Thumbs.db
+
+# =========================
+# Generated files
+# =========================
+
+captures/
+.externalNativeBuild/
+
+# =========================
+# Keystore / signing files
+# =========================
+
+*.jks
+*.keystore
+
+# =========================
+# Firebase
+# =========================
+
+google-services.json

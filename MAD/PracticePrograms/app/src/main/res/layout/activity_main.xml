@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp">
+
+    <TextView
+        android:id="@+id/menuTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/menuSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_subtitle"
+        android:textSize="14sp"
+        android:textColor="#777777"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btnBmi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_bmi"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnTemperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_temperature"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnCalculator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_calculator"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnPalindrome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_palindrome"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_login" />
+
+    <Button
+        android:id="@+id/btnSimpleInterest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_simple_interest"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnEvenOdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_even_odd"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnGrade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_grade"
+        android:layout_marginBottom="12dp" />
+
+
+    <Button
+        android:id="@+id/btnAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_age"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnMultiConverter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_converter"
+        android:layout_marginBottom="12dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+</LinearLayout>

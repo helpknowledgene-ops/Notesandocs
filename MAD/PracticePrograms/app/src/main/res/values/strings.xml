@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">Practice Programs</string>
+
+    <!-- Main Menu -->
+    <string name="menu_title">Practice Programs</string>
+    <string name="menu_subtitle">Pick a program to try</string>
+    <string name="btn_bmi">BMI Calculator</string>
+    <string name="btn_temperature">Temperature Converter</string>
+    <string name="btn_calculator">Simple Calculator</string>
+    <string name="btn_palindrome">Palindrome Checker</string>
+    <string name="btn_login">Login Form with Validation</string>
+    <string name="back_to_menu">Back to Menu</string>
+
+    <!-- BMI -->
+    <string name="title_bmi">BMI Calculator</string>
+    <string name="hint_height">Height (in meters, e.g. 1.75)</string>
+    <string name="hint_weight">Weight (in kg, e.g. 68)</string>
+    <string name="btn_calculate">Calculate</string>
+
+    <!-- Temperature -->
+    <string name="title_temperature">Temperature Converter</string>
+    <string name="hint_temperature">Enter temperature</string>
+    <string name="radio_c_to_f">Celsius → Fahrenheit</string>
+    <string name="radio_f_to_c">Fahrenheit → Celsius</string>
+    <string name="btn_convert">Convert</string>
+
+    <!-- Calculator -->
+    <string name="title_calculator">Simple Calculator</string>
+    <string name="hint_number1">Enter first number</string>
+    <string name="hint_number2">Enter second number</string>
+    <string name="btn_add">Add</string>
+    <string name="btn_subtract">Subtract</string>
+    <string name="btn_multiply">Multiply</string>
+    <string name="btn_divide">Divide</string>
+
+    <!-- Palindrome -->
+    <string name="title_palindrome">Palindrome Checker</string>
+    <string name="hint_word">Enter a word or phrase</string>
+    <string name="btn_check">Check</string>
+
+    <!-- Login -->
+    <string name="title_login">Login Form with Validation</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login_action">Login</string>
+
+<!--interest-->
+    <string name="title_simple_interest">Simple Interest Calculator</string>
+
+    <string name="hint_principal">Principal Amount</string>
+
+    <string name="hint_rate">Rate of Interest (%)</string>
+
+    <string name="hint_time">Time (Years)</string>
+
+<!--    even odd-->
+    <string name="title_even_odd">Even or Odd Checker</string>
+
+    <string name="hint_number">Enter a Number</string>
+
+<!--    grade -->
+    <string name="title_grade">Grade Calculator</string>
+
+    <string name="hint_marks">Enter Marks (0&#8211;100)</string>
+
+
+    <string name="btn_calculate_grade">Calculate Grade</string>
+
+<!--    age -->
+    <string name="title_age">Age Calculator</string>
+
+    <string name="hint_birth_year">Enter Birth Year</string>
+
+    <string name="btn_calculate_age">Calculate Age</string>
+
+<!--    multi converter-->
+    <string name="title_converter">Multi Unit Converter</string>
+
+    <string name="hint_value">Enter Value</string>
+</resources>

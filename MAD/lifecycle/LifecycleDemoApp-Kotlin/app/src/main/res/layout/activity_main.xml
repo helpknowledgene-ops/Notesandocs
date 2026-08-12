@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    CHANGES MADE TO THIS FILE (see comments inline below):
+      - Added a "Task 7: 3-Step Wizard" section (step1Layout / step2Layout /
+        step3Layout + Back/Next buttons + step indicator TextView). This was
+        required by the worksheet but was missing from the handout layout
+        (only a commented-out showStep() stub existed in MainActivity.kt).
+      - Wrapped everything except the ScrollView log in a vertical
+        LinearLayout that is itself inside a ScrollView-free structure is not
+        needed here because the root is already a LinearLayout with the log
+        ScrollView taking the remaining weight=1 space; the wizard section
+        was simply inserted before the log section so it doesn't fight the
+        weighted log view for space.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activity Lifecycle Demo"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="12dp"
+        android:text="Rotate the screen, press Home, switch apps, then come back — watch the log below."
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/nameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your name (survives rotation + app restart)"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/deptInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your department (survives rotation)"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/counterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Fresh launches recorded: 0"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/counterTimerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Time remaining: 60 seconds"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/startTaskButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Start Background Task (5s)" />
+
+    <TextView
+        android:id="@+id/taskResultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="" />
+
+    <Button
+        android:id="@+id/goSecondButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Go to Second Activity →" />
+
+    <Button
+        android:id="@+id/clearLogButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Clear Log" />
+
+    <!-- ================= TASK 7: 3-STEP WIZARD (ADDED) =================
+         Worksheet requirement: a 3-step wizard (currentStep 0-2) built from
+         three stacked layouts toggled by visibility, whose step index must
+         survive both rotation AND "Don't keep activities" (simulated
+         process death). Nothing like this existed in the handout layout,
+         so the whole block below is new. -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Task 7: 3-Step Wizard"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/wizardStepIndicatorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step 1 of 3"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/step1Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Step 1: Enter your basic info above (name / department)." />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/step2Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Step 2: Review the details you entered." />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/step3Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Step 3: All done! Try backgrounding the app now with 'Don't keep activities' on, then return." />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/wizardBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="← Back" />
+
+        <Button
+            android:id="@+id/wizardNextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Next →" />
+    </LinearLayout>
+    <!-- ================= END TASK 7 ADDITION ================= -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Lifecycle Log:"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:id="@+id/logScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="4dp"
+        android:background="#F0F0F0"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/lifecycleLogText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="12sp" />
+
+    </ScrollView>
+
+
+</LinearLayout>

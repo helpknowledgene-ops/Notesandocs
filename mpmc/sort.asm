@@ -1,0 +1,41 @@
+ASSUME CS:CODE, DS:DATA
+
+DATA SEGMENT
+    A DB 90H, 12H, 10H, 34H, 69H
+DATA ENDS
+
+CODE SEGMENT
+
+START:
+    MOV AX, DATA
+    MOV DS, AX
+
+    MOV CL, 04H
+
+L1:
+    MOV SI, 00H
+    MOV CH, 04H
+
+L2:
+    MOV AL, A[SI]
+    MOV BL, A[SI+1]
+
+    CMP AL, BL
+    JBE L3
+
+    MOV A[SI], BL
+    MOV A[SI+1], AL
+
+L3:
+    INC SI
+    DEC CH
+    JNZ L2
+
+    DEC CL
+    JNZ L1
+
+    MOV AH, 4CH
+    INT 21H
+
+CODE ENDS
+END START
